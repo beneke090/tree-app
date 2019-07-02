@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { project, validTypes } from '@geops/tree-lib';
 import Slider from './components/Slider';
 import Dropdown from './components/Dropdown';
+import Autocomplete from './components/Autocomplete_comp';
 
 function getProjection(location) {
   try {
@@ -51,9 +52,14 @@ function App() {
         values={heightWithEmptyInit}
         onChange={heightLevel => setLocation({ ...location, heightLevel })}
       />
-      <Dropdown
+      {/* <Dropdown
         label={t('forestType.label')}
         values={forestTypeWithEmptyInit.sort()}
+        onChange={forestType => setLocation({ ...location, forestType })}
+      /> */}
+      <Autocomplete
+        label={t('forestType.label')}
+        items={validTypes.forestType}
         onChange={forestType => setLocation({ ...location, forestType })}
       />
       <br />

@@ -40,7 +40,7 @@ function Autocomplete({ items, label, onChange }) {
 
       {isOpen && (
         <div {...getMenuProps()}>
-          <ul>
+          <ul style={{ overflow: 'hide' }}>
             {items
               .filter(
                 item =>
